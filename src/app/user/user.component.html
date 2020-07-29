@@ -1,0 +1,81 @@
+
+<div class="container-fluid">
+    <h2>User List</h2>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th (click)="sort()" class="col-md-4 col-sm-6" 
+            style="background-color: red;">ID</th>&nbsp;
+            <th>Name</th>&nbsp;
+            <th>Username</th>&nbsp;
+            <th>Email</th>&nbsp;
+            <th>Phone</th>&nbsp;
+            <th>Website</th>&nbsp;
+            <th class="center">Action</th>
+          </tr>
+        </thead>
+        <tbody> 
+            <tr *ngFor="let user of displayuserlist">
+              <td>{{user.id}}</td>&nbsp;
+              <td>{{user.name}}</td>&nbsp;
+              <td>{{user.username}}</td>&nbsp;
+              <td>{{user.email}}</td>&nbsp;
+              <td>{{user.phone}}</td>&nbsp;
+              <td>{{user.website}}</td>&nbsp;
+              <td>
+                  <button type="button" class="fa fa-pencil" (click)="edituserlist(user.id)">View</button>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>  
+</div>
+
+<div class="main">
+    <div>
+        <h2>User Details</h2>
+    </div>
+    <div>
+    <div>
+        <div >
+        <div >Name<span>*</span></div>
+        <input type="text" placeholder="Enter Employee Name" [(ngModel)]="userdetails.name" name="name">
+        </div>
+        <div >
+            <div class="input_label">UserName<span>*</span></div>
+            <input type="text" placeholder="Enter Employee salary" [(ngModel)]="userdetails.username" name="username">
+        </div>              
+        <div >
+            <div class="input_label">Email<span>*</span></div>
+            <input type="text" placeholder="Enter Employee Age" [(ngModel)]="userdetails.email" name="email">
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <h2>Suggestion List</h2>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>&nbsp;
+            <th>Title</th>&nbsp;
+            <th>Status</th>&nbsp;
+            <th class="center">Action</th>
+          </tr>
+        </thead>
+        <tbody> 
+            <tr *ngFor="let suggestion of displayseggestion">
+              <td>{{suggestion.id}}</td>&nbsp;
+              <td>{{suggestion.title}}</td>&nbsp;
+              <td>{{suggestion.completed}}</td>&nbsp;
+              <td>
+                  <button type="button" class="fa fa-pencil">View</button>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>  
+</div>
